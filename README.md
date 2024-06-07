@@ -19,3 +19,36 @@ Kiểm tra xác thực và ủy quyền bằng cách bao gồm thông tin xác t
 Tìm hiểu về các lỗ hổng bảo mật phổ biến và viết các yêu cầu HTTP để kiểm tra bảo mật của API.
 Sử dụng các công cụ kiểm thử tự động trong Postman để viết các kịch bản kiểm thử.
 # API kiểm thử: https://openweathermap.org/api
+# Báo cáo kiểm thử API
+**1. Mục tiêu kiểm thử**
+- Mục tiêu của kiểm thử là đảm bảo rằng các chức năng chính của Random Data API hoạt động chính xác và hiệu quả. Phạm vi kiểm thử bao gồm các endpoint chính như /people, /people/{id}, /random, và /search.
+
+**2. Kết quả kiểm thử**
+
+***2.1. GET /people***
+- Mã trạng thái: 200 OK
+- Nội dung phản hồi: Danh sách các thông tin về người.
+- Kết quả: Thành công
+  
+***2.2. GET /people/{id} (ID hợp lệ)***
+- Mã trạng thái: 200 OK
+- Nội dung phản hồi: Thông tin chi tiết về người có ID = afa4b392-2059-437b-9456-c2de74315db8.
+- Kết quả: Thành công
+  
+***2.3. GET /people/{id} (ID không hợp lệ)***
+- Mã trạng thái: 404 Not Found
+- Nội dung phản hồi: Lỗi "Not Found".
+- Kết quả: Thành công
+  
+***2.4. GET /search?q={query} (có kết quả)***
+- Mã trạng thái: 200 OK
+- Nội dung phản hồi: Danh sách các thông tin về người phù hợp với từ khóa "John".
+- Kết quả: Thành công
+
+***2.5. GET /search?q={query} (không có kết quả)***
+- Mã trạng thái: 404 Not Found
+- Nội dung phản hồi: Lỗi "Not Found".
+- Kết quả: Thành công
+
+**3. Tóm tắt**
+- API Random Data đã được kiểm thử và chứng minh rằng các chức năng chính hoạt động chính xác và hiệu quả. Tất cả các endpoint đã được kiểm tra và trả về các kết quả phù hợp với yêu cầu.
